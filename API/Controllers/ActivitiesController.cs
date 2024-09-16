@@ -19,6 +19,7 @@ namespace API.Controllers
         public async Task<ActionResult<List<Activity>>> GetActivities()
         {
             var activities = await _context.Activities.ToListAsync();
+            _logger.LogWarning("Getting activities");
             return activities; 
         }
 
